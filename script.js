@@ -53,6 +53,7 @@ function displayPicture(files) {
       dom.style.width = width.toString() + "px";
     }
   }
+  move(0, 50, 100);
 }
 
 function move(a, b, g) {
