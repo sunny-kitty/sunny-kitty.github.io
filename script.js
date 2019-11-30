@@ -42,7 +42,7 @@ function displayPicture(files) {
   document.getElementById("glass").appendChild(img);
   imageLoaded = true;
   image = document.getElementById("image");
-  image.style.width = "100vw";
+  image.style.width = "90vw";
   image.style.height = "auto";
 
   img.onload = function() {
@@ -54,6 +54,7 @@ function displayPicture(files) {
       dom.style.width = width.toString() + "px";
     }
   }
+  style.width = "100vw";
 }
 
 function move(a, b, g) {
