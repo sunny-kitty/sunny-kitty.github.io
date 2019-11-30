@@ -1,6 +1,6 @@
-window.onload = (e) => {
-  start();
-};
+var imageLoaded = false;
+
+window.onload = start;
 
 function start() {
   requestPicture();
@@ -28,10 +28,17 @@ function displayPicture(files) {
   img.src = imgURL;
   img.id = "image";
   document.getElementById("main").appendChild(img);
+  imageLoaded = true;
 }
 
 function handle(event) {
-  document.getElementById("alpha").innerHTML = event.alpha;
-  document.getElementById("beta").innerHTML = event.beta;
-  document.getElementById("gamma").innerHTML = event.gamma;
+  var alpha = Math.round(event.alpha);
+  var beta = Math.round(event.beta);
+  var gamma = Math.round(event.gamma);
+  document.getElementById("alpha").innerHTML = alpha;
+  document.getElementById("beta").innerHTML = beta;
+  document.getElementById("gamma").innerHTML = gamma;
+  if (imageLoaded) {
+    
+  }
 }
