@@ -13,8 +13,13 @@ function start() {
   }
 
   function addEventListener() {
-    //check if device orientation is enabled
-    window.ondeviceorientation = onDeviceMovement;
+    if (window.DeviceOrientationEven){
+      alert("orientation");
+      window.ondeviceorientation = onDeviceMovement;
+    }
+    else {
+      alert("no orientation");
+    }
   }
 
   requestPicture();
@@ -53,7 +58,6 @@ function displayPicture(files) {
       dom.style.width = width.toString() + "px";
     }
   }
-  move(0, 50, 100);
 }
 
 function move(a, b, g) {

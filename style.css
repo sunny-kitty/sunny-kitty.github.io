@@ -1,6 +1,7 @@
 header {
   text-align: center;
   background-color: #DEDEDE;
+  font-size: 2em;
 }
 aside {
   background-color: #F5F5F5;
@@ -24,6 +25,8 @@ h2 {
 
 #image {
   position: relative;
+  width: 100%
+  height: auto;
   margin: 0px;
   padding: 0px;
 }
