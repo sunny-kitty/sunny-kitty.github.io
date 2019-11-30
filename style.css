@@ -1,82 +1,15 @@
 #wrapper {
-  display: grid;
-  grid-template-columns: 5% 25% 40% 25% 5%;
-  grid-template-rows: 20% 80%;
-  background-color: white;
-  height: 100vh;
-}
-
-.box {
-  border-radius: 5px;
-  padding: 20px;
-  margin: 5px;
-}
-
-#header {
-  background-color: green;
-  grid-column: 1 / 4;
-  grid-row: 1;
-}
-
-main {
-  grid-column: 1 / 5;
-  grid-row: 2;
-}
-
-#left {
-  grid-column: 1 / 5;
-  grid-row: 3;
-}
-
-@media only screen and (min-width: 80rem) {
-  #header {
-    background-color: red;
-    grid-column: 1 / 6;
-    grid-row: 1;
-  }
-
-  #left {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  #main {
-    grid-column: 3;
-    grid-row: 2;
-  }
-
-  #right {
-    grid-column: 4;
-    grid-row: 2;
-  }
-}
-
-#header {
-  text-align: center;
-}
-
-#main {}
-
-#input {
-  display: block;
   margin: auto;
 }
 
+#glass {
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+
 #image {
-  object-fit: fill;
-  /*display: block;
-*/
-  width: 100%;
-  height: auto;
-  /*border-style: dashed;
-  border-width: 3px;
-  margin: auto;*/
-}
-
-#left, #right {
-  background-color: gray;
-}
-
-h2 {
-  text-align: center;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
 }

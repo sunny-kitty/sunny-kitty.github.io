@@ -1,10 +1,30 @@
+var wrapper, glass, image;
+
+var alpha, beta, gamma
+
 var imageLoaded = false;
 
 window.onload = start;
 
 function start() {
+  initializeDomVariables();
+  addEventListener();
+
+  function initializeDomVariables() {
+    wrapper = document.getElementById("wrapper");
+    glass = document.getElementById("glass");
+
+    alpha = document.getElementById("alpha");
+    beta = document.getElementById("beta");
+    gamma = document.getElementById("gamma");
+  }
+
+  function addEventListener() {
+    //check if device orientation is enabled
+    window.ondeviceorientation = onDeviceMovement;
+  }
+
   requestPicture();
-  window.addEventListener("deviceorientation", handle, true);
 }
 
 function requestPicture() {
@@ -13,7 +33,7 @@ function requestPicture() {
   input.type = "file";
   input.accept = "image/*";
   input.capture = "camera";
-  document.getElementById("main").appendChild(input);
+  document.getElementById("glass").appendChild(input);
   input.addEventListener("change", (e) => displayPicture(e.target.files));
 }
 
@@ -27,18 +47,33 @@ function displayPicture(files) {
   };
   img.src = imgURL;
   img.id = "image";
-  document.getElementById("main").appendChild(img);
+  document.getElementById("glass").appendChild(img);
   imageLoaded = true;
+  image = document.getElementById("image");
+
+  img.onload = function() {
+    setSize(wrapper, image.height, image.width);
+    setSize(glass, image.height, image.width);
+
+    function setSize(dom, height, width) {
+      dom.style.height = height.toString() + "px";
+      dom.style.width = width.toString() + "px";
+    }
+  }
 }
 
-function handle(event) {
-  var alpha = Math.round(event.alpha);
-  var beta = Math.round(event.beta);
-  var gamma = Math.round(event.gamma);
-  document.getElementById("alpha").innerHTML = alpha;
-  document.getElementById("beta").innerHTML = beta;
-  document.getElementById("gamma").innerHTML = gamma;
-  if (imageLoaded) {
-    
-  }
+function move(a, b, g) {
+  image.style.top = b.toString() + "px";
+  image.style.left = g.toString() + "px";
+}
+
+function onDeviceMovement(event) {
+  var a = Math.round(event.alpha);
+  var b = Math.round(event.beta);
+  var g = Math.round(event.gamma);
+  alpha.innerHTML = a;
+  beta.innerHTML = b;
+  gamma.innerHTML = g;
+  if (imageLoaded)
+    move(a, b, g);
 }
