@@ -1,1 +1,48 @@
-html es
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Aufgabe 1</title>
+</head>
+
+<body>
+  <span id="alpha"></span><br>
+  <span id="beta"></span><br>
+  <span id="gamma"></span><br>
+  <span id="error"></span>
+
+  <input type="file" accept="image/*" capture="camera">
+  <script type="text/javascript">
+    window.addEventListener("deviceorientation", handle, true);
+
+
+
+    getMedia({
+      audio: true,
+      video: {
+        facingMode: "user"
+      }
+    });
+
+    async function getMedia(constraints) {
+      let stream = null;
+
+      try {
+        stream = await navigator.mediaDevices.getUserMedia(constraints);
+        document.getElementById("error").innerHTML = "no error";
+      } catch (err) {
+        document.getElementById("error").innerHTML = "error";
+      }
+    }
+
+    function handle(event) {
+      document.getElementById("alpha").innerHTML = "alpha: " + event.alpha;
+      document.getElementById("beta").innerHTML = "beta: " + event.beta;
+      document.getElementById("gamma").innerHTML = "gamma: " + event.gamma;
+
+    }
+  </script>
+</body>
+
+</html>
