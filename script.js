@@ -42,6 +42,8 @@ function displayPicture(files) {
   document.getElementById("glass").appendChild(img);
   imageLoaded = true;
   image = document.getElementById("image");
+  image.style.width = "100vw";
+  image.style.height = "auto";
 
   img.onload = function() {
     setSize(wrapper, image.height, image.width);
