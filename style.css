@@ -28,7 +28,7 @@ main {
   grid-row: 3;
 }
 
-@media only screen and (min-width: 50rem) {
+@media only screen and (min-width: 80rem) {
   #header {
     background-color: red;
     grid-column: 1 / 6;
