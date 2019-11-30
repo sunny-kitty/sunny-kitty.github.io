@@ -13,13 +13,7 @@ function start() {
   }
 
   function addEventListener() {
-    if (window.DeviceOrientationEven){
-      alert("orientation");
       window.ondeviceorientation = onDeviceMovement;
-    }
-    else {
-      alert("no orientation");
-    }
   }
 
   requestPicture();
