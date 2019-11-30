@@ -12,18 +12,16 @@
   <span id="gamma"></span><br>
   <span id="error"></span>
 
-<input width = 100px height = 100px type="file" accept="image/*" capture="camera">
+<!--<input width = 100px height = 100px type="file" accept="image/*" capture="camera">-->
   <script type="text/javascript">
 
     window.addEventListener("deviceorientation", handle, true);
 
 
-/*
+
     getMedia({
       audio: true,
-      video: {
-        facingMode: "user"
-      }
+      video: true
     });
 
     async function getMedia(constraints) {
@@ -36,7 +34,6 @@
         document.getElementById("error").innerHTML = "error";
       }
     }
-*/
     function handle(event) {
       document.getElementById("alpha").innerHTML = "alpha: " + event.alpha;
       document.getElementById("beta").innerHTML = "beta: " + event.beta;
