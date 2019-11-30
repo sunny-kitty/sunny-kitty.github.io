@@ -1,7 +1,4 @@
 var wrapper, glass, image;
-
-var alpha, beta, gamma
-
 var imageLoaded = false;
 
 window.onload = start;
@@ -13,10 +10,6 @@ function start() {
   function initializeDomVariables() {
     wrapper = document.getElementById("wrapper");
     glass = document.getElementById("glass");
-
-    alpha = document.getElementById("alpha");
-    beta = document.getElementById("beta");
-    gamma = document.getElementById("gamma");
   }
 
   function addEventListener() {
@@ -71,9 +64,9 @@ function onDeviceMovement(event) {
   var a = Math.round(event.alpha);
   var b = Math.round(event.beta);
   var g = Math.round(event.gamma);
-  alpha.innerHTML = a;
-  beta.innerHTML = b;
-  gamma.innerHTML = g;
+  document.getElementById("alpha").innerHTML = a;
+  document.getElementById("beta").innerHTML = b;
+  document.getElementById("gamma").innerHTML = g;
   if (imageLoaded)
     move(a, b, g);
 }

@@ -1,3 +1,17 @@
+header {
+  text-align: center;
+  background-color: #DEDEDE;
+}
+aside {
+  background-color: #F5F5F5;
+  font-size: xx-large;
+}
+
+h2 {
+  text-align: center;
+}
+
+
 #wrapper {
   margin: auto;
 }
