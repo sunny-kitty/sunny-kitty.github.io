@@ -3,44 +3,25 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Aufgabe 1</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 
 <body>
-  <span id="alpha"></span><br>
-  <span id="beta"></span><br>
-  <span id="gamma"></span><br>
-  <span id="error"></span>
-
-<!--<input width = 100px height = 100px type="file" accept="image/*" capture="camera">-->
-  <script type="text/javascript">
-
-    window.addEventListener("deviceorientation", handle, true);
-
-
-
-    getMedia({
-      audio: true,
-      video: true
-    });
-
-    async function getMedia(constraints) {
-      let stream = null;
-
-      try {
-        stream = await navigator.mediaDevices.getUserMedia(constraints);
-        document.getElementById("error").innerHTML = "no error";
-      } catch (err) {
-        document.getElementById("error").innerHTML = "error";
-      }
-    }
-    function handle(event) {
-      document.getElementById("alpha").innerHTML = "alpha: " + event.alpha;
-      document.getElementById("beta").innerHTML = "beta: " + event.beta;
-      document.getElementById("gamma").innerHTML = "gamma: " + event.gamma;
-
-    }
-  </script>
+  <div id=wrapper>
+    <header id=header class=box>
+      <h1>Moving Image</h1>
+      <p>by David Graf, 1974692</p>
+    </header>
+    <main id=main class=box>
+    </main>
+    <aside id=left class=box>
+      <p>Alpha: <span id=alpha></span></p>
+      <p>Beta: <span id=beta></span></p> 
+      <p>Gamma: <span id=gamma></span></p>
+    </aside>
+    <aside id=right class=box></aside>
+  </div>
 </body>
 
 </html>
