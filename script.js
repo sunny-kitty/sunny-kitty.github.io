@@ -54,17 +54,8 @@ function start() {
     if (image === null || image === undefined) return;
     var y = 0;
     // gamma [-90, 90]
-    var x = 0;
-    if (-90 <= gamma && gamma <= -75) x = -0.05;
-    else if (-75 <= gamma && gamma <= -60) x = -0.04;
-    else if (-60 <= gamma && gamma <= -45) x = -0.03;
-    else if (-45 <= gamma && gamma <= -30) x = -0.02;
-    else if (-30 <= gamma && gamma <= -15) x = -0.01;
-    else if (-15 <= gamma && gamma <= 0) x = 0;
-    else console.log("invalid gamma " + gamma);
 
-
-    move(x*width, y*height);
+    move((gamma / 1800) * width, y * height);
 
 
 
