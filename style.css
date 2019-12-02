@@ -10,25 +10,11 @@ html, body {
   grid-gap: 0;
 }
 
-.box {}
-
-#left, #right {
-  /* TODO:  */
-  background-color: gray;
-}
-
-#center {
-  /* TODO:  */
-  background-color: red;
-}
-
 /*-------------------- HEADER --------------------*/
 header {
   text-align: center;
   margin: 0;
   padding: 1rem 0 1rem 0;
-  background-color: green;
-  /* TODO:  */
 }
 
 header h1 {
@@ -40,7 +26,6 @@ header p {
   margin: 0;
   padding: 0;
 }
-
 
 /*-------------------- MAIN --------------------*/
 main div {
