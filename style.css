@@ -27,6 +27,11 @@ header p {
   padding: 0;
 }
 
+/*-------------------- ASIDE --------------------*/
+aside {
+  padding: 0 1rem 0 1rem;
+}
+
 /*-------------------- MAIN --------------------*/
 main div {
   display: block;
