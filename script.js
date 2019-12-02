@@ -1,6 +1,5 @@
 var glass, image;
 var width, height;
-var threeDFactor = 0.1;
 
 window.onload = start;
 
@@ -42,8 +41,8 @@ function start() {
     width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     if (image === null || image === undefined) return;
-    glass.style.width = (image.width - (width * threeDFactor)) + "px";
-    glass.style.height = (image.height - (height * threeDFactor)) + "px";
+    glass.style.width = (image.width - (width * 0.1)) + "px";
+    glass.style.height = (image.height - (height * 0.1)) + "px";
     move();
   }
 
@@ -53,12 +52,12 @@ function start() {
     document.getElementById("beta").innerHTML = beta;
     document.getElementById("gamma").innerHTML = gamma;
     if (image === null || image === undefined) return;
-    move((gamma / (threeDFactor / 90))) * width, (beta / (threeDFactor / 180) * height);
+    move((gamma / 1800) * width, (beta / 3600) * height);
 }
 
 function move(x = 0, y = 0) {
-  image.style.right = (width * (threeDFactor / 2)) + x + "px";
-  image.style.bottom = (height * (threeDFactor / 2)) + y + "px";
+  image.style.right = (width * 0.05) + x + "px";
+  image.style.bottom = (height * 0.05) + y + "px";
   //delete
   document.getElementById("xvalue").innerHTML = x;
   document.getElementById("yvalue").innerHTML = y;
