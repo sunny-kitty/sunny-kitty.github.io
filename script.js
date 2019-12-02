@@ -47,19 +47,12 @@ function start() {
   }
 
   function deviceOrientationController() {
-    var beta = Math.round(event.beta);
-    var gamma = Math.round(event.gamma);
+    var beta = Math.round(event.beta); // [-180, 180]
+    var gamma = Math.round(event.gamma); // [-90, 90]
     document.getElementById("beta").innerHTML = beta;
     document.getElementById("gamma").innerHTML = gamma;
     if (image === null || image === undefined) return;
-    var y = 0;
-    // gamma [-90, 90]
-
-    move((gamma / 1800) * width, y * height);
-
-
-
-    // TODO: umrechnung von beta und gamma in pixel mit anschlißendem move. dann fertig
+    move((gamma / 1800) * width, (beta / 3600) * height);
   }
 
   function move(x = 0, y = 0) {
@@ -67,13 +60,6 @@ function start() {
     image.style.bottom = (height * 0.05) + y + "px";
     //delete
     document.getElementById("xvalue").innerHTML = x;
+    document.getElementById("yvalue").innerHTML = y;
   }
-  /*-----------*/
-  document.getElementById("btn").onclick = () => {
-    test += 0.01;
-    var x = width * test;
-    var y = 0;
-    move(x, y);
-  };
 }
-var test = 0;
