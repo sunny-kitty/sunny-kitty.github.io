@@ -74,6 +74,8 @@ function start() {
   function move(x = 0, y = 0) {
     image.style.right = (width * 0.05) + x + "px";
     image.style.bottom = (height * 0.05) + y + "px";
+    //delete
+    document.getElementById("xvalue").innerHTML = x;
   }
   /*-----------*/
   document.getElementById("btn").onclick = () => {
