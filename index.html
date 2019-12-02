@@ -9,26 +9,31 @@
 </head>
 
 <body>
-  <header>
-    <h1>Moving Image</h1>
-    <p>By David Graf</p>
-  </header>
+  <div id=grid>
+    <div id=left class=box></div>
+    <div id=center class=box>
+      <header>
+        <h1>Moving Image</h1>
+        <p>by David Graf</p>
+      </header>
+      <aside id=instructions>
+        <h2>Instructions</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </aside>
+      <aside id=deviceOrientation>
+        <h2>Device Orientation</h2>
+        <p>Beta: <span id=beta></span></p>
+        <p>Gamma: <span id=gamma></span></p>
+      </aside>
+      <main>
+        <div id=glass></div>
+      </main>
 
-  <aside id=left>
-    <h2>Device</h2>
-    <p>Alpha: <span id=alpha></span></p>
-    <p>Beta: <span id=beta></span></p>
-    <p>Gamma: <span id=gamma></span></p>
-  </aside>
-
-  <aside id=right>
-    <h2>Instructions</h2>
-  </aside>
-
-  <div id=wrapper>
-    <div id=glass>
     </div>
+    <div id=right class=box></div>
   </div>
+  <button type="button" id="btn">button</button>
 </body>
 
 </html>

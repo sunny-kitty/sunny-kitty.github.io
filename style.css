@@ -1,28 +1,56 @@
+html, body {
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: 5vw auto 5vw;
+  grid-gap: 0;
+}
+
+.box {}
+
+#left, #right {
+  /* TODO:  */
+  background-color: gray;
+}
+
+#center {
+  /* TODO:  */
+  background-color: red;
+}
+
+/*-------------------- HEADER --------------------*/
 header {
   text-align: center;
-  background-color: #DEDEDE;
-}
-aside {
-  background-color: #F5F5F5;
-}
-
-h2 {
-  text-align: center;
+  margin: 0;
+  padding: 1rem 0 1rem 0;
+  background-color: green;
+  /* TODO:  */
 }
 
-
-#wrapper {
-  margin: auto;
+header h1 {
+  margin: 0;
+  padding: 0;
 }
 
-#glass {
+header p {
+  margin: 0;
+  padding: 0;
+}
+
+
+/*-------------------- MAIN --------------------*/
+main div {
+  display: block;
+  margin: 0 auto 0 auto;
   overflow: hidden;
-  margin: 0px;
-  padding: 0px;
 }
 
-#image {
+main div img {
   position: relative;
-  margin: 0px;
-  padding: 0px;
+  max-width: 90vw;
+  height: auto;
 }
