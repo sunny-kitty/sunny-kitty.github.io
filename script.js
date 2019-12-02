@@ -64,7 +64,7 @@ function start() {
     else console.log("invalid gamma " + gamma);
 
 
-    move(x, y);
+    move(x*width, y*height);
 
 
 
