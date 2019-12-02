@@ -52,14 +52,17 @@ function start() {
     document.getElementById("beta").innerHTML = beta;
     document.getElementById("gamma").innerHTML = gamma;
     if (image === null || image === undefined) return;
-    move((gamma / 1800) * width, (beta / 3600) * height);
-}
+    var x = (gamma / 1800) * width;
+    var y = (beta / 3600) * height;
+    if (0 <= beta && beta <= 90) y = (beta / 1800) * height;
+    move(x, y);
+  }
 
-function move(x = 0, y = 0) {
-  image.style.right = (width * 0.05) + x + "px";
-  image.style.bottom = (height * 0.05) + y + "px";
-  //delete
-  document.getElementById("xvalue").innerHTML = x;
-  document.getElementById("yvalue").innerHTML = y;
-}
+  function move(x = 0, y = 0) {
+    image.style.right = (width * 0.05) + x + "px";
+    image.style.bottom = (height * 0.05) + y + "px";
+    //delete
+    document.getElementById("xvalue").innerHTML = x;
+    document.getElementById("yvalue").innerHTML = y;
+  }
 }
