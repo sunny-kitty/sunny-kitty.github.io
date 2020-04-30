@@ -62,7 +62,7 @@ function start() {
     image.style.right = (width * 0.1) + x + "px";
     image.style.bottom = (height * 0.1) + y + "px";
     //delete
-    document.getElementById("xvalue").innerHTML = x;
-    document.getElementById("yvalue").innerHTML = y;
+    document.getElementById("xvalue").innerHTML = Math.round(x);
+    document.getElementById("yvalue").innerHTML = Math.round(y);
   }
 }
